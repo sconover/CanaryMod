@@ -64,7 +64,7 @@ public class Main {
         doMain(args);
     }
 
-    private static MinecraftServer doMain(String[] args) {
+    public static MinecraftServer doMain(String[] args) {
         log.info("Starting: " + Canary.getImplementationTitle() + " " + Canary.getImplementationVersion());
         log.info("Canary Path: " + Canary.getCanaryJarPath() + " & Working From: " + Canary.getWorkingPath());
 
