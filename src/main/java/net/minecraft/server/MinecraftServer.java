@@ -721,6 +721,10 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
     }
 
     public static void main(String[] astring) {
+        doMain(astring);
+    }
+
+    public static MinecraftServer doMain(String[] astring) {
         Bootstrap.c();
 
         try {
@@ -805,6 +809,7 @@ public abstract class MinecraftServer implements ICommandSender, Runnable, IPlay
                                                      }
                                                  }
                                                 );
+            return dedicatedserver;
         }
         catch (Exception exception) {
             //h.fatal("Failed to start the minecraft server", exception);

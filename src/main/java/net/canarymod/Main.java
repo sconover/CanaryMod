@@ -61,6 +61,10 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
+        doMain(args);
+    }
+
+    private static MinecraftServer doMain(String[] args) {
         log.info("Starting: " + Canary.getImplementationTitle() + " " + Canary.getImplementationVersion());
         log.info("Canary Path: " + Canary.getCanaryJarPath() + " & Working From: " + Canary.getWorkingPath());
 
@@ -109,12 +113,13 @@ public class Main {
             }
 
             initBird(); // Initialize the Bird
-            MinecraftServer.main(args); // Boot up the native server
+            return MinecraftServer.doMain(args); // Boot up the native server
         }
         catch (Throwable t) {
             log.fatal("Error occurred during start up, unable to continue... ", t);
             System.exit(42); //Just in case something did manage to start going
         }
+        return null;
     }
 
     /**
